@@ -1,1 +1,196 @@
-index 1
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Homepage — Smart & Clean</title>
+  <meta name="description" content="A clean, responsive homepage template." />
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --accent:#6ee7b7; /* mint */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1100px;
+      --ff: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff);
+      background: linear-gradient(180deg, #071024 0%, #071223 45%, #071226 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{width:100%;max-width:var(--max-width)}
+
+    /* NAV */
+    nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4ade80);display:grid;place-items:center;font-weight:700;color:#042024}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    .nav-links a:hover{color:var(--accent);background:var(--glass)}
+    .cta{background:var(--accent);color:#042024;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600}
+
+    /* responsive hamburger */
+    .hamburger{display:none;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;background:transparent}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:34px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .hero h1{font-size:clamp(28px,4vw,44px);margin:0 0 12px}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .hero .actions{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#042024}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+
+    /* CARD */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .feature{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+    .feature h3{margin:8px 0 6px}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* FOOTER */
+    footer{margin-top:26px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* UTIL */
+    .small{font-size:0.9rem}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .hamburger{display:inline-flex}
+    }
+    @media (max-width:560px){
+      .features{grid-template-columns:1fr}
+    }
+
+    /* MOBILE NAV (simple) */
+    .mobile-menu{display:none;margin-top:12px}
+    .mobile-menu.open{display:block}
+    .form-row{display:flex;gap:8px}
+    @media (max-width:980px){.form-row{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo">SB</div>
+        <div>
+          <div style="font-weight:700">SmartBoardX</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Capture • Clean • Share</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#signup">Get started</a>
+      </div>
+
+      <button class="hamburger" id="hamb">☰</button>
+    </nav>
+
+    <div class="mobile-menu card" id="mobileMenu">
+      <a href="#features">Features</a><br>
+      <a href="#how">How it works</a><br>
+      <a href="#pricing">Pricing</a><br>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <main class="hero" role="main">
+      <section>
+        <h1>Digitize your classroom board in real-time.</h1>
+        <p class="lead">SmartBoardX captures handwritten diagrams and text, cleans them up, and syncs to your students' devices instantly. Fast, private, and offline-capable.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#signup">Start free trial</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <strong>Live status</strong>
+          <div style="display:flex;gap:12px;margin-top:10px;align-items:center">
+            <div style="width:12px;height:12px;border-radius:50%;background:#10b981"></div>
+            <div class="muted">Realtime capture active — 12 students connected</div>
+          </div>
+        </div>
+
+        <div id="features" class="features" style="margin-top:18px">
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Fast capture</h3>
+            <p class="muted">Low-latency capture pipeline that works in live lectures and recordings.</p>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/></svg>
+            <h3>Privacy-first</h3>
+            <p class="muted">On-device preprocessing — no raw images are stored unless you choose to.</p>
+          </div>
+          <div class="feature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <h3>Organized notes</h3>
+            <p class="muted">Auto-sorted by subject and session, searchable and shareable.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2 style="margin-top:0">Get a demo</h2>
+        <p class="muted">Enter your email and we'll send a short demo and setup guide.</p>
+        <form id="demoForm" style="margin-top:12px">
+          <div class="form-row">
+            <input type="email" id="email" placeholder="you@college.edu" required style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" />
+            <button class="btn btn-primary" type="submit">Send</button>
+          </div>
+          <div id="msg" class="small muted" style="margin-top:8px"></div>
+        </form>
+
+        <div style="margin-top:18px">
+          <strong>Pricing</strong>
+          <p class="muted small">Free plan for classrooms. Pro plan for institutions with advanced analytics.</p>
+          <a class="btn btn-ghost" href="#pricing">See plans</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">© <span id="year"></span> SmartBoardX — Built for classrooms</div>
+      <div class="small muted">Made with ♥ • <a href="#" style="color:var(--muted);text-decoration:underline">Privacy</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const hamb = document.getElementById('hamb');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamb.addEventListener('click', ()=>{
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.getElementById('demoForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      document.getElementById('msg').textContent = `Thanks — a demo link was sent to ${email} (demo content simulated).`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
